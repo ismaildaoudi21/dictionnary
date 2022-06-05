@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Word
+{% endblock %}
+
+{% block main %}
+<main class="container p-5">
+<span>Please note that some images does not match 100% with the word.</span>
+<div style="display:inline-block;"class="col-sm-8 ui-box">
+    <h3>{{word}}</h3>
+    <span class="pronunciation-text" style="color: #808080;">/{{pronunciation}}/</span>
+    {% for def in definitions%}
+        <div class="row" style="border-top: solid 1px #e6e6e6;">
+            <div class="col-sm my-auto">
+                <i>{{def.type}}</i>
+                <br>{{def.definition}}<br>
+                <span style="color: #808080; font-size: 14px;">{{def.example}}
+                </span>
+            </div>
+        </div>
+    {% endfor%}
+</div>
+</main>
+<main class="container p-6">
+    {% for elt in results %}
+    <div style="display:inline-block;"class="col-sm-3">
+        <img src="{{elt.webformatURL}}" alt="image" class="img-thumbnail">
+    </div>
+    {% endfor %}
+</main>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+<main class="container">
+    {% for elt in results%}
+    <div class="col-sm mt-2 ui-box">
+        <h3>{{elt.word}}</h3>
+        <span class="pronunciation-text" style="color: #808080;">/{{elt.pronunciation}}/</span>
+        {% for def in elt.definitions%}
+            <div class="row" style="border-top: solid 1px #e6e6e6;">
+                <div class="col-sm my-auto">
+                    <i>{{def.type}}</i>
+                    <br>{{def.definition}}<br>
+                    <span style="color: #808080; font-size: 14px;">{{def.example}}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</main>
+
+{% endblock %}
