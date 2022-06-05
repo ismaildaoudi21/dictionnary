@@ -1,5 +1,7 @@
 # Dictionary with images 
 
+## Dictionary with images using two rest APIs (Pixabay and Owlbot)
+
 ## Installation
 First you need to pull the image using ```docker pull ismaildaoudi/dictionary:latest```
 
